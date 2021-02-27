@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      BMI Calculator
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">BMI Calculator</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-img style="margin: 3px;" src="https://www.health-total.com/wp-content/uploads/2019/10/bmi-chart-img.jpg"></ion-img>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Weight (kg)</ion-label>
+      <ion-input type="number" [(ngModel)]="weight"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Height (cm)</ion-label>
+      <ion-input type="number" [(ngModel)]="height"></ion-input>
+    </ion-item>
+  </ion-list>
+  <br>
+  <ion-button color = "medium" (click)="calculateBMI()"> Calculate BMI </ion-button>
+ <!--
+  <div padding>
+    <button block ion-button (click)="calculateBMI()" color="Primary"> Calculate BMI </button>
+  </div>
+  -->
+
+  <ion-card *ngIf="bmiValue">
+    <ion-card-header>
+      BMI Calculation
+    </ion-card-header>
+    <ion-card-content>
+      <p>Person's Weight {{this.weight}} kg </p> 
+      <p>Person's Height {{this.height}} cm </p>
+      <p>BMI: {{bmiValue}}</p>
+      <p><strong>You are {{bmiMessage}}</strong></p>
+    </ion-card-content>
+  </ion-card>
+
+  <!--
+    const toast = await this.toastController.create({
+      header: 'Message',
+      message: 'Thanks for using BMI Calculator. Good day ahead',
+      position: 'top',
+      buttons: [
+        {
+          text: 'Done',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    toast.present(); -->
+  
+
+ <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
+</ion-content>
