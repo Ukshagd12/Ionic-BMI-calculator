@@ -1,1 +1,1 @@
-This is the task given to us.
+This was the task given to us.
